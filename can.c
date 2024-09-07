@@ -1,10 +1,9 @@
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "util/str_util.h";
-#include "permission.h";
+#include "util/str_util.h"
+#include "permission.h"
 
 const int STR_SPACE = 30;
 const int FILE_SPACE = 1000;
@@ -17,7 +16,7 @@ void read_file(char* content, FILE* file, struct permission check);
 
 struct permission perms[10];
 
-void can_main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     bool invalid_path = false;
     int fileIndex = 1;
 
@@ -80,7 +79,6 @@ void can_main(int argc, char* argv[]) {
     if (invalid_path) {
         puts("Include a valid path for the policy file.");
     }
-
 }
 
 void read_file(char* content, FILE* file, struct permission check) {

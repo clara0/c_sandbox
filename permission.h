@@ -10,12 +10,12 @@ struct permission {
     bool allow;
 };
 
-bool samePerm(struct permission p1, struct permission p2) {
+static bool samePerm(struct permission p1, struct permission p2) {
     return strcmp(p1.subject, p2.subject) && strcmp(p1.resource, p2.resource) &&
         strcmp(p1.action, p2.action);
 }
 
-bool sameAllow(struct permission p1, struct permission p2) {
+static bool sameAllow(struct permission p1, struct permission p2) {
     return strcmp(p1.subject, p2.subject) && strcmp(p1.resource, p2.resource) &&
         strcmp(p1.action, p2.action) && p1.allow == p2.allow;
 }
